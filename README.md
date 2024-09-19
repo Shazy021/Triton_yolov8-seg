@@ -7,6 +7,7 @@ To get started, follow these steps:
 1. Clone the repository:
 ```bash
 git clone https://github.com/Shazy021/Triton_yolov8-seg.git
+cd Triton_yolov8-seg
 ```
 
 2. Start `Triton inference Server`:
@@ -43,3 +44,20 @@ python3 client_example_seg.py --image ./data/example.jpg
 * Ensure you have Docker installed and configured to use GPU for optimal performance.
 * Adjust the confidence threshold and IoU threshold in `client_example_seg.py` script as needed for your specific use case.
 * For further customization, refer to the code in the repository.
+
+# Project structure
+```
+├── README.md                    <- Documentation for project.
+├── client_example_seg.py        <- Example script for performing inference using YOLOv8 on Triton Inference Server.
+├── data                         <- Directory containing example images and output results.
+│   ├── demo_co.jpg              <- Visualization contours on image.
+│   ├── demo_dd.jpg              <- Segmentation results image.
+│   └── example.jpg              <- Input example image.
+├── model_repository             <- Directory containing model and configuration file for Triton Inference Server.
+│   └── yolov8_seg_onnx          <- Model directory for YOLOv8 segmentation model.
+│       ├── 1                    <- Versioning directory for model.
+│       │   └── model.onnx       <- ONNX model file for YOLOv8 segmentation.
+│       └── config.pbtxt         <- Configuration file for model in Triton Inference Server.
+├── requirements.txt             <- Required Python libraries for project running.
+└── utils.py                     <- Utility functions for processing and visualizing results.
+```
